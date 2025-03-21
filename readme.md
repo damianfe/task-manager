@@ -4,7 +4,7 @@ Este es un challenge para la **Academia ForIT 2025**, donde se desarrolla una ap
 
 ## 🚀 Tecnologías utilizadas
 
-- **Backend**: NestJS con arquitectura hexagonal
+- **Backend**: NestJS 
 - **Frontend**: Next.js con React y TypeScript
 - **Gestor de paquetes**: pnpm workspaces
 
