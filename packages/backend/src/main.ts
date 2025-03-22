@@ -10,12 +10,11 @@ async function bootstrap(): Promise<void> {
     // Configurar Swagger
     setupSwagger(app);
 
-    await app.listen(3000);
+    await app.listen(4000);
 
-    // Logs profesionales con Logger
-    Logger.log(`🚀 Server running on: http://localhost:3000`, 'Bootstrap');
+    Logger.log(`🚀 Server running on: http://localhost:4000`, 'Bootstrap');
     Logger.log(
-      `📄 API Docs available at: http://localhost:3000/api/docs`,
+      `📄 API Docs available at: http://localhost:4000/api/docs`,
       'Swagger',
     );
   } catch (error) {
