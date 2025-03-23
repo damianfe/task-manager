@@ -9,6 +9,11 @@ async function bootstrap(): Promise<void> {
 
     // Configurar Swagger
     setupSwagger(app);
+    app.enableCors({
+      origin: '*',
+      methods: 'GET,HEAD,PUT,PATCH,POST,DELETE',
+      credentials: true,
+    });
 
     await app.listen(4000);
 
