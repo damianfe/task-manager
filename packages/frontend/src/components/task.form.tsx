@@ -1,6 +1,7 @@
 import { useState } from "react";
 import { Task } from "@/shared/task.interface";
 import { createTask, updateTask } from "@/services/tasks.service";
+import toast from "react-hot-toast";
 
 interface Props {
   task?: Task;
@@ -13,12 +14,18 @@ export default function TaskForm({ task, onTaskSaved }: Props) {
 
   const handleSubmit = async (e: React.FormEvent) => {
     e.preventDefault();
-    if (task) {
-      await updateTask(task.id, { title, description });
-    } else {
-      await createTask({ title, description });
+    try {
+      if (task) {
+        await updateTask(task.id, { title, description });
+        toast.success("Tarea actualizada correctamente ✅");
+      } else {
+        await createTask({ title, description });
+        toast.success("Tarea creada con éxito 🎉");
+      }
+      onTaskSaved();
+    } catch {
+      toast.error("Hubo un error al guardar la tarea ❌");
     }
-    onTaskSaved();
   };
 
   return (

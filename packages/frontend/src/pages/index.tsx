@@ -2,6 +2,7 @@ import { useState, useCallback } from "react";
 import TaskList from "@/components/task.list";
 import TaskForm from "@/components/task.form";
 import { motion } from "framer-motion";
+import { Toaster } from "react-hot-toast";
 
 export default function Home() {
   const [refresh, setRefresh] = useState(0);
@@ -12,6 +13,16 @@ export default function Home() {
 
   return (
     <div className="flex flex-col items-center min-h-screen py-10 bg-gray-100 text-gray-900">
+      <Toaster
+        position="top-right"
+        toastOptions={{
+          duration: 3000,
+          style: {
+            background: "#333",
+            color: "#fff",
+          },
+        }}
+      />
       <motion.h1
         initial={{ opacity: 0, y: -10 }}
         animate={{ opacity: 1, y: 0 }}
