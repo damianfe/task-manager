@@ -1,57 +1,83 @@
 # Task Manager Challenge
 
 Este es un challenge para la **Academia ForIT 2025**, donde se desarrolla una aplicación de lista de tareas utilizando **NestJS** para el backend y **Next.js** para el frontend, estructurado como un **monorepo** con `pnpm`.
-
-## 🚀 Tecnologías utilizadas
-
-- **Backend**: NestJS 
-- **Frontend**: Next.js con React y TypeScript
-- **Gestor de paquetes**: pnpm workspaces
-
-## 📂 Estructura del proyecto
+## 📁 Estructura del Proyecto
 
 ```
-task-manager/
-│── packages/
-│   ├── backend/    # API con NestJS
-│   ├── frontend/   # Aplicación Next.js
-│── pnpm-workspace.yaml
-│── package.json
-│── README.md
-│── .gitignore
+.
+├── backend/   # Backend con Express
+├── frontend/  # Frontend con React y Vite
+└── README.md  # Documentación
 ```
 
-## 🔧 Instalación y ejecución
+---
 
-### 1️⃣ Clonar el repositorio
+# 🖥 Backend
 
-```sh
-git clone https://github.com/tu-usuario/task-manager.git
-cd task-manager
-```
+## 🚀 Instalación y Configuración
 
-### 2️⃣ Instalar dependencias
+1. Ve al directorio del backend:
+   ```sh
+   cd backend
+   ```
+2. Instala las dependencias:
+   ```sh
+   pnpm install
+   ```
+3. Crea un archivo `.env` con la configuración necesaria:
+   ```env
+   PORT=4000
+   DATABASE_URL=postgresql://user:password@localhost:5432/tasks_db
+   ```
+4. Ejecuta las migraciones de Prisma:
+   ```sh
+   pnpm prisma migrate dev
+   ```
+5. Inicia el servidor:
+   ```sh
+   pnpm dev
+   ```
 
-```sh
-pnpm install
-```
+## 📌 Endpoints
 
-### 3️⃣ Ejecutar los servicios
+- `GET /tasks` → Obtiene todas las tareas.
+- `POST /tasks` → Crea una nueva tarea.
+- `PATCH /tasks/:id` → Actualiza una tarea.
+- `DELETE /tasks/:id` → Elimina una tarea.
 
-- **Backend**:
-  ```sh
-  pnpm --filter backend dev
-  ```
-- **Frontend**:
-  ```sh
-  pnpm --filter frontend dev
-  ```
+---
+
+# 🎨 Frontend
+
+## 🚀 Instalación y Ejecución
+
+1. Ve al directorio del frontend:
+   ```sh
+   cd frontend
+   ```
+2. Instala las dependencias:
+   ```sh
+   pnpm install
+   ```
+3. Crea un archivo `.env` con la URL del backend:
+   ```env
+   VITE_API_URL=http://localhost:4000
+   ```
+4. Inicia la aplicación:
+   ```sh
+   pnpm dev
+   ```
 
 ## 📌 Funcionalidades
 
--
+✅ Agregar, editar y eliminar tareas.  
+✅ Marcar tareas como completadas.  
+✅ Animaciones con Framer Motion.  
+✅ Estilos con Tailwind CSS.  
 
-## 📜 Licencia
+---
 
-Este proyecto se encuentra bajo la licencia MIT.
+# 📜 Licencia
+
+Este proyecto está bajo la licencia MIT.
 
