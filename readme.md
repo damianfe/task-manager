@@ -76,6 +76,17 @@ Este es un challenge para la **Academia ForIT 2025**, donde se desarrolla una ap
 ✅ Estilos con Tailwind CSS.  
 
 ---
+## 📸 Capturas de Pantalla
+
+### 🎯 Lista de Tareas
+![Lista de Tareas](./screenshots/image5.png)
+
+### ➕ Agregar una Nueva Tarea
+![Agregar Tarea](./screenshots/image1.png)
+
+### ✅ Marcar como Completada
+![Tarea Completada](./screenshots/image4.png)
+
 
 # 📜 Licencia
 
